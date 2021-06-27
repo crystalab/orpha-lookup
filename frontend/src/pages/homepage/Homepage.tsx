@@ -9,10 +9,10 @@ export const Homepage = observer(() => {
 
   return (
     <BaseLayout>
-      <Box m={2}>
+      <Box mb={2}>
         <HpoLookup />
       </Box>
-      <Box mt={2}>
+      <Box mb={2}>
         <DisorderList />
       </Box>
     </BaseLayout>

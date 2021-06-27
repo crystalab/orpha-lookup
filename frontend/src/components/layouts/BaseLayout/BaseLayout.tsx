@@ -17,7 +17,9 @@ export const BaseLayout: React.FC<BaseLayoutProps> = props => {
           </Typography>
         </Toolbar>
       </AppBar>
-      {children}
+      <Box m={2}>
+        {children}
+      </Box>
     </>
   );
 };
