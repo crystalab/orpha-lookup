@@ -6,8 +6,7 @@ from django.db.models.functions import Coalesce
 class DisorderQuerySet(BulkUpdateOrCreateQuerySet):
     def with_hpos(self, hpo_ids):
         score = ExpressionWrapper(
-            Coalesce(Sum('hpos__frequency__weight', filter=Q(hpos__hpo_id__in=hpo_ids)), 0.00) -
-            Coalesce(Sum('hpos__frequency__weight', filter=~Q(hpos__hpo_id__in=hpo_ids)), 0.00),
+            Coalesce(Sum('hpos__frequency__weight', filter=Q(hpos__hpo_id__in=hpo_ids)), 0.00),
             output_field=FloatField()
         )
 

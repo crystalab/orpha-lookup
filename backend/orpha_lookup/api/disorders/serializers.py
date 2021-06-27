@@ -7,7 +7,7 @@ from orpha_lookup.apps.orpha.models import Disorder, DisorderHpos
 class DisorderHpoSerializer(serializers.ModelSerializer):
     class Meta:
         model = DisorderHpos
-        fields = ('hpo', 'frequency')
+        fields = ('id', 'hpo', 'frequency')
 
     frequency = serializers.CharField(source='frequency.name')
     hpo = HpoSerializer()
