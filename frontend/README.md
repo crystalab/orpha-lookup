@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# Orpha lookup frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+
+This folder contains fronted part of the product. It uses `react` as a view library
+and `mobx-state-tree` as a main state management library.
+
+## Project structure
+
+Project structure follows the general `Create React App` approach:
+
+```
++ public/             (static files)
++ src/                (source code directory)
++   components/       (reusable components: cards, lookup fields, etc.)
++   mobx/             (mobx state-related code)
++     extensions/     (mobx useful extensions)
++     models/         (essential orpha mobx models)
++     stores/         (application mobx stores)
++     Environment.ts  (application environment enables access to services that shared across stores)
++     Root.store.ts   (root store of the applicaiton contains links to descendant stores)
++     setupStore.ts   (code that initialize environment and root store)
++   pages/            (entrypoints for each route)
++   services/         (reusable services)
++   theme/            (material UI theme options)
++   App.tsx           (high-level App component)
++   index.tsx         (react entry point)
+```
 
 ## Available Scripts
 
@@ -28,19 +53,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
